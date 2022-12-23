@@ -1,4 +1,5 @@
 from copy import deepcopy
+
 N_STACKS = 9
 
 stacks = [[] for _ in range(N_STACKS)]
@@ -12,7 +13,7 @@ with open("input_5.txt", "r") as fin:
                 continue
 
             for i in range(N_STACKS):
-                el = row[i*4 + 1:i*4 + 2]
+                el = row[i * 4 + 1 : i * 4 + 2]
                 if el != " ":
                     stacks[i].append(el)
 
@@ -24,7 +25,7 @@ with open("input_5.txt", "r") as fin:
 
         else:
             rs = row.split(" ")
-            cnt, fr, to  = int(rs[1]), int(rs[3]) - 1, int(rs[5].replace("\n", "")) - 1
+            cnt, fr, to = int(rs[1]), int(rs[3]) - 1, int(rs[5].replace("\n", "")) - 1
             print(cnt, fr, to)
 
             bot, top = stacks[fr][:-cnt], stacks[fr][-cnt:]
@@ -38,6 +39,3 @@ with open("input_5.txt", "r") as fin:
 
 print("".join([s[-1] for s in stacks]))
 print("".join([s[-1] for s in stacks_2]))
-    
-
-
